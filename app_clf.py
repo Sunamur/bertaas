@@ -1,7 +1,10 @@
 from flask import Flask, request
 from transformers import pipeline
+import logging
 
 
+
+logging.basicConfig(filename='error.log',level=logging.DEBUG)
 app = Flask(__name__)
 
 global clf
