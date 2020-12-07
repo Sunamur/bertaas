@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 from transformers import pipeline
 import logging
 
@@ -35,4 +35,4 @@ def get_class():
     if answer_only:
         return ans['labels'][0]
     else:
-        return ans
+        return jsonify(ans)
