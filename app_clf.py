@@ -29,8 +29,7 @@ def get_class():
     candidate_labels = req_data['candidate_labels']
     hypothesis_template = req_data.get('hypothesis_template',"Этот текст про {}.")
     multi_class = req_data.get('multi_class',True)
-    answer_only = int(req_data['answer_only'])
-    
+    answer_only = int(req_data.get('answer_only',0), )
     ans = clf(sequence, candidate_labels, hypothesis_template=hypothesis_template, multi_class=True)
     if answer_only:
         return ans['labels'][0]
