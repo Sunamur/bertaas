@@ -35,3 +35,6 @@ def get_class():
         return ans['labels'][0]
     else:
         return jsonify(ans)
+
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=5000)
